@@ -2,10 +2,13 @@ import React, { Component } from 'react';
 import './App.css';
 import {BrowserRouter as Router, Route, Redirect} from 'react-router-dom';
 import axios from 'axios';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
-import Home from "./components/Home";
+import Welcome from "./components/Welcome";
+// import IntroCard from "../IntroCard.js";
+// import SignInModal from "../SignInModal.js";
 
 class App extends Component {
   state = {
@@ -82,11 +85,12 @@ class App extends Component {
   render() {
     const loggedIn = this.state.auth.isAuthenticated;
     return (
+      <MuiThemeProvider>
       <Router>
         <div>
         <Route exact path = "/" render = {()=> {
           if(loggedIn){
-            return <Redirect to = "/home" />
+            return <Redirect to = "/welcome" />
           } else{
             return <SignIn 
               handleChange= {this.handleChange} 
@@ -98,7 +102,7 @@ class App extends Component {
         }}/>
         <Route exact path = "/signup" render = {()=> {
           if(loggedIn){
-            return <Redirect to = "/home" />
+            return <Redirect to = "/welcome" />
           } else{
             return <SignUp 
               handleChange= {this.handleChange} 
@@ -108,16 +112,17 @@ class App extends Component {
             />
           }  
         }}/>
-        <Route exact path = "/home" render = {()=> {
+        <Route exact path = "/welcome" render = {()=> {
           if(!loggedIn){
             return <Redirect to = "/" />
           } else {
-            return <Home handleLogout = {this.handleLogout} auth = { this.state.auth }/>
+            return <Welcome handleLogout = {this.handleLogout} auth = { this.state.auth }/>
           } 
         }
         }/>
         </div>
       </Router>
+      </MuiThemeProvider>
     );
   }
 }
