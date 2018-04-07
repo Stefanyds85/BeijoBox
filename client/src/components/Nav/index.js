@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from "react-router-dom";
 import {
     Collapse,
     Navbar,
@@ -32,15 +31,15 @@ import {
       return (
         <div>
           <Navbar color="light" light expand="md">
-            <NavbarBrand href="/">reactstrap</NavbarBrand>
+            <NavbarBrand href="/">BeijoBox</NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
                 <NavItem>
-                  <NavLink href="/components/">Components</NavLink>
+                  <NavLink href="/components/">About Us</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
+                  <NavLink href="https://github.com/reactstrap/reactstrap">Connect With Us</NavLink>
                 </NavItem>
                 <UncontrolledDropdown nav inNavbar>
                   <DropdownToggle nav caret>
@@ -49,7 +48,6 @@ import {
                   <DropdownMenu right>
                     <DropdownItem>
                       <SignInModal {...this.props} /> 
-                      Sign In 
                     </DropdownItem>
                     <DropdownItem>
                       Sign Up

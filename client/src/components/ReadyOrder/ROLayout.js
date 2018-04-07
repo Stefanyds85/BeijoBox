@@ -1,10 +1,16 @@
 import React from 'react';
+import { Card, CardImg, CardText, CardBody,
+  CardTitle, CardSubtitle, Button } from 'reactstrap';
+import Nav from "../Nav/index.js";
+import Footer from "../Footer/index.js";
 import { Container, Row, Col } from 'reactstrap';
 
 export default class Example extends React.Component {
   render() {
     return (
+      
       <Container>
+        
         <Row>
           <Col>.col</Col>
         </Row>
@@ -42,39 +48,23 @@ export default class Example extends React.Component {
     );
   }
 }
-Container Properties
-Container.propTypes = {
-  fluid:  PropTypes.bool
-  // applies .container-fluid class
-}
-Row Properties
-Row.propTypes = {
-  noGutters: PropTypes.bool
-}
-Col Properties
-const stringOrNumberProp = PropTypes.oneOfType([PropTypes.number, PropTypes.string]);
-const columnProps = PropTypes.oneOfType([
-  PropTypes.string,
-  PropTypes.number,
-  PropTypes.bool,
-  PropTypes.shape({
-    size: PropTypes.oneOfType([PropTypes.bool, PropTypes.number, PropTypes.string]),
-    // example size values:
-    // 12 || "12" => col-12 or col-`width`-12
-    // auto => col-auto or col-`width`-auto
-    // true => col or col-`width`
-    order: stringOrNumberProp,
-    offset: stringOrNumberProp
-  })
-]);
 
-Col.propTypes = {
-  xs: columnProps,
-  sm: columnProps,
-  md: columnProps,
-  lg: columnProps,
-  xl: columnProps,
-  // override the predefined width (the ones above) with your own custom widths.
-  // see https://github.com/reactstrap/reactstrap/issues/297#issuecomment-273556116
-  widths: PropTypes.array,
-}
+// const Example = (props) => {
+//   return (
+//     <div>
+//       <Nav {...props}/>
+//       <Card>
+//         <CardImg top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
+//         <CardBody>
+//           <CardTitle>Card title</CardTitle>
+//           <CardSubtitle>Card subtitle</CardSubtitle>
+//           <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
+//           <Button>Button</Button>
+//         </CardBody>
+//       </Card>
+//       <Footer/>
+//     </div>
+//   );
+// };
+
+// export default Example;

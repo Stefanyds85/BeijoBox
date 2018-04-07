@@ -1,6 +1,18 @@
 import React from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Input, Label, Form, FormGroup } from 'reactstrap';
 import SignInForm from "./SignInForm.js";
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem } from 'reactstrap';
 
 class ModalExample extends React.Component {
   constructor(props) {
@@ -32,17 +44,17 @@ class ModalExample extends React.Component {
     return (
       <div>
         <Form inline onSubmit={(e) => e.preventDefault()}>
-          <Button onClick={this.toggle}>Sign In</Button>
+          <DropdownItem onClick={this.toggle}>Sign In
+          </DropdownItem>
         </Form>
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className} backdrop={this.state.backdrop}>
-          <ModalHeader toggle={this.toggle}>Modal title</ModalHeader>
+          <ModalHeader toggle={this.toggle}>Sign In</ModalHeader>
           <ModalBody>
 
             <SignInForm {...this.props}/>
             
           </ModalBody>
           <ModalFooter>
-            <Button color="primary" onClick={this.toggle}>Do Something</Button>{' '}
             <Button color="secondary" onClick={this.toggle}>Cancel</Button>
           </ModalFooter>
         </Modal>

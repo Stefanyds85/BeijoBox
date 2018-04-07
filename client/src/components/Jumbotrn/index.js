@@ -1,9 +1,10 @@
 import React from 'react';
 import { Jumbotron, Container } from 'reactstrap';
+import "./style.css";
 
 const Example = (props) => {
   return (
-    <div>
+    <div ClassName = "jumbotrn">
       <Jumbotron fluid>
         <Container fluid>
           <h1 className="display-3">Welcome to BeijoBox!!</h1>
