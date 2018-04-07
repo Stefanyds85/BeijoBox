@@ -2,13 +2,11 @@ import React, { Component } from 'react';
 import './App.css';
 import {BrowserRouter as Router, Route, Redirect} from 'react-router-dom';
 import axios from 'axios';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import { Button } from 'reactstrap';
 
 import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
 import Welcome from "./components/Welcome";
-// import IntroCard from "../IntroCard.js";
-// import SignInModal from "../SignInModal.js";
 
 class App extends Component {
   state = {
@@ -85,10 +83,10 @@ class App extends Component {
   render() {
     const loggedIn = this.state.auth.isAuthenticated;
     return (
-      <MuiThemeProvider>
+      
       <Router>
         <div>
-        <Route exact path = "/" render = {()=> {
+        {/* <Route exact path = "/" render = {()=> {
           if(loggedIn){
             return <Redirect to = "/welcome" />
           } else{
@@ -99,8 +97,15 @@ class App extends Component {
               password = {this.state.password}
             />
           } 
-        }}/>
-        <Route exact path = "/signup" render = {()=> {
+        }}/> */}
+
+         <Route exact path = "/" render = {()=> {
+            return <Welcome handleLogout = {this.handleLogout} auth = { this.state.auth }/>
+
+          } 
+        }/>
+        
+        <Route exact path = "/signinmodal" render = {()=> {
           if(loggedIn){
             return <Redirect to = "/welcome" />
           } else{
@@ -112,17 +117,24 @@ class App extends Component {
             />
           }  
         }}/>
-        <Route exact path = "/welcome" render = {()=> {
+        <Route exact path = "/signupmodal" render = {()=> {
           if(!loggedIn){
             return <Redirect to = "/" />
           } else {
-            return <Welcome handleLogout = {this.handleLogout} auth = { this.state.auth }/>
+            return <Welcome 
+              handleLogout = {this.handleLogout} 
+              auth = { this.state.auth }
+              handleChange= {this.handleChange} 
+              handleSubmit = {this.handleSubmit}
+              email = {this.state.email}
+              password = {this.state.password}
+            />
           } 
         }
         }/>
         </div>
       </Router>
-      </MuiThemeProvider>
+      
     );
   }
 }
