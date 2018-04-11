@@ -1,19 +1,23 @@
 import React from 'react';
-import {
-    Collapse,
-    Navbar,
-    NavbarToggler,
-    NavbarBrand,
-    Nav,
-    NavItem,
-    NavLink,
-    UncontrolledDropdown,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem } from 'reactstrap';
+import {Link} from 'react-router-dom';
+
+// import {
+//     Collapse,
+//     Navbar,
+//     NavbarToggler,
+//     NavbarBrand,
+//     Nav,
+//     NavItem,
+//     NavLink,
+//     UncontrolledDropdown,
+//     DropdownToggle,
+//     DropdownMenu,
+//     DropdownItem } from 'reactstrap';
   import SignInModal from "../SignInModal";
+  // import SignUpModal from "../SignUpModal";
+  import Welcome from "../Welcome";
   
-  export default class MainNav extends React.Component {
+  export default class Nav extends React.Component {
     constructor(props) {
       super(props);
   
@@ -29,39 +33,26 @@ import {
     }
     render() {
       return (
-        <div>
-          <Navbar color="light" light expand="md">
-            <NavbarBrand href="/">BeijoBox</NavbarBrand>
-            <NavbarToggler onClick={this.toggle} />
-            <Collapse isOpen={this.state.isOpen} navbar>
-              <Nav className="ml-auto" navbar>
-                <NavItem>
-                  <NavLink href="/components/">About Us</NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink href="https://github.com/reactstrap/reactstrap">Connect With Us</NavLink>
-                </NavItem>
-                <UncontrolledDropdown nav inNavbar>
-                  <DropdownToggle nav caret>
-                    Options
-                  </DropdownToggle>
-                  <DropdownMenu right>
-                    <DropdownItem>
-                      <SignInModal {...this.props} /> 
-                    </DropdownItem>
-                    <DropdownItem>
-                      Sign Up
-                    </DropdownItem>
-                    <DropdownItem divider />
-                    <DropdownItem>
-                      Reset
-                    </DropdownItem>
-                  </DropdownMenu>
-                </UncontrolledDropdown>
-              </Nav>
-            </Collapse>
-          </Navbar>
+
+      <nav className="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+        <div className="container">
+          <Link className="navbar-brand" to="../">BeijoBox</Link>
+          <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarResponsive">
+            <ul className="navbar-nav ml-auto">
+              <li className="nav-item">
+                <Link className="nav-link" to="../signinmodal">Sign In</Link>
+              </li>
+              <li className="nav-item">
+                {/* <Link className="nav-link" to="../signupmodal">Sign Up</Link> */}
+              </li>
+            </ul>
+          </div>
         </div>
+      </nav>
+  
       );
     }
   }

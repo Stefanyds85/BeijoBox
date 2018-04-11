@@ -4,11 +4,14 @@ import {BrowserRouter as Router, Route, Redirect} from 'react-router-dom';
 import axios from 'axios';
 
 import SignIn from "./components/SignIn";
-// import SignUp from "./components/SignUp";
+import SignUp from "./components/SignUp";
 import Welcome from "./components/Welcome";
 import ReadyOrder from "./components/ReadyOrder";
 import CustomOrder from "./components/CustomOrder";
 import Footer from "./components/Footer";
+import SignInModal from "./components/SignInModal";
+// import SignUpModal from "./components/SignUpModal";
+
 
 class App extends Component {
   state = {
@@ -85,7 +88,7 @@ class App extends Component {
   render() {
     const loggedIn = this.state.auth.isAuthenticated;
     return (
-      
+          // <h1>Hello</h1>
       <Router>
         <div>
         {/* <Route exact path = "/" render = {()=> {
@@ -107,16 +110,16 @@ class App extends Component {
           } 
         }/>
         
-        <Route exact path = "/signinmodal" render = {()=> {
+        {/* <Route exact path = "/signinmodal" render = {()=> {
           if(loggedIn){
             return <Redirect to = "/welcome" />
           } else{
-            return <SignIn
+            return <SignUpModal
               handleChange= {this.handleChange} 
               handleSubmit = {this.handleSubmit}
               email = {this.state.email}
               password = {this.state.password}
-            />
+            /> */}
           }  
         }}/>
 
@@ -149,7 +152,7 @@ class App extends Component {
         }}/>
 
 
-        <Route exact path = "/signinmodal/signupform.js" render = {()=> {
+        <Route exact path = "/signupmodal" render = {()=> {
           if(!loggedIn){
             return <Redirect to = "/" />
           } else {

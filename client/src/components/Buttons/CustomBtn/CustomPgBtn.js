@@ -5,7 +5,7 @@ export default class Example extends React.Component {
   render() {
     return (
       <div>
-        <Button color="primary" size="lg">Custom Box</Button>{' '}
+        <Button color="primary" size="lg">Shop Custom Box</Button>{' '}
       </div>
     );
   }
