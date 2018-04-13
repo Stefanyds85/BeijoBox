@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Input, Label, Form, FormGroup } from 'reactstrap';
 import SignInForm from "./SignInForm.js";
+
 import {
   Collapse,
   Navbar,
@@ -12,9 +13,10 @@ import {
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
-  DropdownItem } from 'reactstrap';
+  DropdownItem
+} from 'reactstrap';
 
-class ModalExample extends React.Component {
+class SignInMod extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -44,23 +46,23 @@ class ModalExample extends React.Component {
     return (
       <div>
         <Form inline onSubmit={(e) => e.preventDefault()}>
-          <DropdownItem onClick={this.toggle}>Sign In
+          <DropdownItem onClick={this.toggle}>Sign puppy In
           </DropdownItem>
         </Form>
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className} backdrop={this.state.backdrop}>
           <ModalHeader toggle={this.toggle}>Sign In</ModalHeader>
           <ModalBody>
 
-            <SignInForm {...this.props}/>
-            
+            <SignInForm {...this.props} />
+
           </ModalBody>
           <ModalFooter>
             <Button color="secondary" onClick={this.toggle}>Cancel</Button>
           </ModalFooter>
-        </Modal>
+        </Modal>  
       </div>
     );
   }
 }
 
-export default ModalExample;
+export default SignInMod;

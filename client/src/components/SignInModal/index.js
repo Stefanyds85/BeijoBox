@@ -1,3 +1,3 @@
-import SignInModal from "./SignInModal.js";
+import SignInMod from "./SignInMod.js";
 
-export default SignInModal;
+export default SignInMod;

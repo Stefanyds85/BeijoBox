@@ -1,18 +1,5 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
-
-// import {
-//     Collapse,
-//     Navbar,
-//     NavbarToggler,
-//     NavbarBrand,
-//     Nav,
-//     NavItem,
-//     NavLink,
-//     UncontrolledDropdown,
-//     DropdownToggle,
-//     DropdownMenu,
-//     DropdownItem } from 'reactstrap';
+  import React from 'react';
+  import {Link} from 'react-router-dom';
   import SignInModal from "../SignInModal";
   // import SignUpModal from "../SignUpModal";
   import Welcome from "../Welcome";
@@ -43,7 +30,7 @@ import {Link} from 'react-router-dom';
           <div className="collapse navbar-collapse" id="navbarResponsive">
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
-                <Link className="nav-link" to="../signinmodal">Sign In</Link>
+                <Link className="nav-link" to="/signinmodal/">Sign banana In</Link>
               </li>
               <li className="nav-item">
                 {/* <Link className="nav-link" to="../signupmodal">Sign Up</Link> */}

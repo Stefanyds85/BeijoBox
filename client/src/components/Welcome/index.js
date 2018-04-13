@@ -3,7 +3,6 @@ import "./style.css";
 import Nav from "../Nav/index.js";
 import ReadyPgBtn from "../Buttons/ReadyBtn";
 import CustomPgBtn from "../Buttons/CustomBtn";
-import {NavItem, NavLink } from 'reactstrap';
 import {Link} from 'react-router-dom';
 import Footer from "../Footer/index.js";
 import birthday1 from "./Images/birthday1.jpg";

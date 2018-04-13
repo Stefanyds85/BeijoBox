@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import {BrowserRouter as Router, Route, Redirect} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import axios from 'axios';
 
 import SignIn from "./components/SignIn";
@@ -18,17 +18,17 @@ class App extends Component {
     username: "",
     password: "",
     auth: {
-      userId:"",
-      username:"",
-      isAuthenticated:false
+      userId: "",
+      username: "",
+      isAuthenticated: false
     }
   };
 
-  componentWillMount(){
-    axios.get("/auth/isAuthenticated").then((result)=>{
-      const {userId, isAuthenticated,username} = result.data
+  componentWillMount() {
+    axios.get("/auth/isAuthenticated").then((result) => {
+      const { userId, isAuthenticated, username } = result.data
       this.setState({
-        auth:{
+        auth: {
           userId,
           isAuthenticated,
           username
@@ -38,8 +38,8 @@ class App extends Component {
   }
 
   handleChange = (event) => {
-    const {name, value} = event.target;    
-        // Set the state for the appropriate input field
+    const { name, value } = event.target;
+    // Set the state for the appropriate input field
     this.setState({
       [name]: value
     });
@@ -56,13 +56,13 @@ class App extends Component {
     this.setState({
       username: "",
       password: ""
-    }); 
-    const {name} = event.target;
+    });
+    const { name } = event.target;
     axios.post(name, newUser).then((data) => {
-      if (data.data.isAuthenticated){
-        const {userId, isAuthenticated,username} = data.data;
+      if (data.data.isAuthenticated) {
+        const { userId, isAuthenticated, username } = data.data;
         this.setState({
-          auth:{
+          auth: {
             userId,
             isAuthenticated,
             username
@@ -74,9 +74,9 @@ class App extends Component {
 
   handleLogout = (event) => {
     event.preventDefault();
-    axios.get("/auth/logout").then((result)=>{
+    axios.get("/auth/logout").then((result) => {
       this.setState({
-        auth:{
+        auth: {
           userId: "",
           username: "",
           isAuthenticated: false
@@ -88,88 +88,49 @@ class App extends Component {
   render() {
     const loggedIn = this.state.auth.isAuthenticated;
     return (
-          // <h1>Hello</h1>
       <Router>
         <div>
-        {/* <Route exact path = "/" render = {()=> {
-          if(loggedIn){
-            return <Redirect to = "/welcome" />
-          } else{
-            return <SignIn 
-              handleChange= {this.handleChange} 
-              handleSubmit = {this.handleSubmit}
-              email = {this.state.email}
-              password = {this.state.password}
+          <Route exact path="/" render={() => {
+            return <Welcome handleLogout={this.handleLogout} auth={this.state.auth} />
+          }} />
+
+          <Route exact path="/readyorder" render={() => {
+
+            return <ReadyOrder
+              handleChange={this.handleChange}
+              handleSubmit={this.handleSubmit}
+              email={this.state.email}
+              password={this.state.password}
             />
-          } 
-        }}/> */}
+          }} />
 
-         <Route exact path = "/" render = {()=> {
-            return <Welcome handleLogout = {this.handleLogout} auth = { this.state.auth }/>
-
-          } 
-        }/>
-        
-        {/* <Route exact path = "/signinmodal" render = {()=> {
-          if(loggedIn){
-            return <Redirect to = "/welcome" />
-          } else{
-            return <SignUpModal
-              handleChange= {this.handleChange} 
-              handleSubmit = {this.handleSubmit}
-              email = {this.state.email}
-              password = {this.state.password}
-            /> */}
-          }  
-        }}/>
-
- <Route exact path = "/readyorder" render = {()=> {
-          // if(loggedIn){
-          //   return <Redirect to = "/welcome" />
-          // } else{
-           
-           return <ReadyOrder
-              handleChange= {this.handleChange} 
-              handleSubmit = {this.handleSubmit}
-              email = {this.state.email}
-              password = {this.state.password}
+          <Route exact path="/customorder" render={() => {
+            return <CustomOrder
+              handleChange={this.handleChange}
+              handleSubmit={this.handleSubmit}
+              email={this.state.email}
+              password={this.state.password}
             />
-          // }
-        }}/>
+          }} />
 
-        <Route exact path = "/customorder" render = {()=> {
-          // if(loggedIn){
-          //   return <Redirect to = "/welcome" />
-          // } else{
-           
-           return <CustomOrder
-              handleChange= {this.handleChange} 
-              handleSubmit = {this.handleSubmit}
-              email = {this.state.email}
-              password = {this.state.password}
-            />
-          // }
-        }}/>
-
-
-        <Route exact path = "/signupmodal" render = {()=> {
-          if(!loggedIn){
-            return <Redirect to = "/" />
-          } else {
-            return <Welcome 
-              handleLogout = {this.handleLogout} 
-              auth = { this.state.auth }
-              handleChange= {this.handleChange} 
-              handleSubmit = {this.handleSubmit}
-              email = {this.state.email}
-              password = {this.state.password}
-            />
-          } 
-        }
-        }/>
+          <Route exact path="/signinmodal" render={() => {
+            if (loggedIn) {
+              return <Redirect to="/" />
+            } else {
+              return <SignInModal
+                handleLogout={this.handleLogout}
+                auth={this.state.auth}
+                handleChange={this.handleChange}
+                handleSubmit={this.handleSubmit}
+                email={this.state.email}
+                password={this.state.password}
+              />
+            }
+          }
+          } />
         </div>
       </Router>
-      
+
     );
   }
 }

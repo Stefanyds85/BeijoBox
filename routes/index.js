@@ -1,10 +1,13 @@
 module.exports = function (passport) {
 	const path = require("path");
 	const router = require('express').Router();
+	const myApiRoutes = require("./myApi");
 
 
 	router.use("/auth",require("./authRoutes.js")(passport));
 	router.use("/api",require("./apiRoutes.js")(passport));
+	router.use("/myApi", myApiRoutes);
+	
 	//add more routes here
 	
 

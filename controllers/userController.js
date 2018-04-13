@@ -1,9 +1,9 @@
-const Product = require("../models").Product;
+const User = require("../models").User;
 
 module.exports = {
     findAll: function(req,res){
         //this function will find all of the boxes from my database.
-        db.Product
+        db.User
         .find(req.query)
         .sort({ id: -1 })
         .then(dbModel => res.json(dbModel))
@@ -11,7 +11,7 @@ module.exports = {
     },
 
     findById: function(req, res) {
-        db.Product
+        db.User
         .findById(req.params.id)
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
@@ -19,51 +19,34 @@ module.exports = {
     
 
     findOne: function(req,res){
-        //this function will find one product by ID(id is created by mongo automatically).
-        db.Product
+        //this function will find one user by ID(id is created by mongo automatically).
+        db.User
         .findOne(req.params.name)
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
     },
 
-    findByCat: function(req,res){
-        //this function will find all of the boxes by category from my database.
-        db.Product
-        .findByCat(req.params.category)
-        .then(dbModel => res.json(dbModel))
-        .catch(err => res.status(422).json(err));
-    },
-
-    findBySize: function(req,res){
-        //this function will find all of the boxes by size from my database.
-        db.Product
-        .findbySize(req.params.size)
-        .then(dbModel => res.json(dbModel))
-        .catch(err => res.status(422).json(err));
-
-    },
-
     create: function(req, res) {
-        const product = {
+        const user = {
         id: req.body.id,
         name: req.body.name,
         };
-        db.Product
-        .create(product)
-        .then(dbProduct => res.json(dbProduct))
+        db.User
+        .create(user)
+        .then(dbUser => res.json(dbUser))
         .catch(err => res.status(422).json(err));
     },
     update: function(req, res) {
-        db.Product
+        db.User
         .findOneAndUpdate({ id: req.params.id }, req.body)
-        .the(dbProduct => res.json(dbProduct))
+        .the(dbUser => res.json(dbUser))
         .catch(err => res.status(422).json(err));
     },
     remove: function(req, res) {
-        db.Product
+        db.User
         .findById({ id: req.params.id })
-        .the(dbProduct =Product.remove())
-        .the(dbProduct => res.json(dbProduct))
+        .the(dbUser =User.remove())
+        .the(dbUser => res.json(dbUser))
         .catch(err => res.status(422).json(err));
     }
     };
