@@ -45,14 +45,18 @@ class SignInMod extends React.Component {
   render() {
     return (
       <div>
-        <Form inline onSubmit={(e) => e.preventDefault()}>
+        <SignInForm {...this.props} />
+        {/* <Form inline onSubmit={(e) => e.preventDefault()}>
           <DropdownItem onClick={this.toggle}>Sign puppy In
           </DropdownItem>
-        </Form>
+          </Form> */}
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className} backdrop={this.state.backdrop}>
-          <ModalHeader toggle={this.toggle}>Sign In</ModalHeader>
+          <ModalHeader toggle={this.toggle}>Sign china In</ModalHeader>
           <ModalBody>
-
+          <Form inline onSubmit={(e) => e.preventDefault()}>
+          <DropdownItem onClick={this.toggle}>Sign puppy In
+          </DropdownItem>
+          </Form>
             <SignInForm {...this.props} />
 
           </ModalBody>
@@ -60,6 +64,7 @@ class SignInMod extends React.Component {
             <Button color="secondary" onClick={this.toggle}>Cancel</Button>
           </ModalFooter>
         </Modal>  
+    
       </div>
     );
   }

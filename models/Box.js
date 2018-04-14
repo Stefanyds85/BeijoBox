@@ -5,10 +5,10 @@ const Box = new Schema({
     name: String,
     category: String,
     price: Number,
-    products: [String],
-    size: String,
-    id: Number
-	
+    rating: Number,
+    discription: String,
+    products: [String]
+
 });
 
 module.exports = mongoose.model('Box', Box);

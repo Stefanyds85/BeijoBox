@@ -30,7 +30,7 @@
           <div className="collapse navbar-collapse" id="navbarResponsive">
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
-                <Link className="nav-link" to="/signinmodal/">Sign banana In</Link>
+                <Link className="nav-link" to="/signinmodal">Sign banana In</Link>
               </li>
               <li className="nav-item">
                 {/* <Link className="nav-link" to="../signupmodal">Sign Up</Link> */}

@@ -4,10 +4,9 @@ import Nav from "../Nav/index.js";
 import ReadyPgBtn from "../Buttons/ReadyBtn";
 import CustomPgBtn from "../Buttons/CustomBtn";
 import {Link} from 'react-router-dom';
-import Footer from "../Footer/index.js";
-import birthday1 from "./Images/birthday1.jpg";
-import anniversary from "./Images/anniversary.jpg";
-import corporate from "./Images/corporate.jpg";
+import birthdayMain from "./Images/birthdayMain.jpg";
+import anniversaryMain from "./Images/anniversaryMain.jpg";
+import corporateMain from "./Images/corporateMain.jpg";
 
   
 
@@ -42,7 +41,7 @@ const Welcome = (props) => {
 			<div className="row align-items-center">
 			  <div className="col-lg-6 order-lg-2">
 				<div className="p-5">
-				  <img className="img-fluid rounded-circle" src={birthday1} alt=""/>
+				  <img className="img-fluid rounded-circle" src={birthdayMain} alt=""/>
 				</div>
 			  </div>
 			  <div className="col-lg-6 order-lg-1">
@@ -60,7 +59,7 @@ const Welcome = (props) => {
 			<div className="row align-items-center">
 			  <div className="col-lg-6">
 				<div className="p-5">
-				  <img className="img-fluid rounded-circle" src={anniversary} alt=""/>
+				  <img className="img-fluid rounded-circle" src={anniversaryMain} alt=""/>
 				</div>
 			  </div>
 			  <div className="col-lg-6">
@@ -78,7 +77,7 @@ const Welcome = (props) => {
 			<div className="row align-items-center">
 			  <div className="col-lg-6 order-lg-2">
 				<div className="p-5">
-				  <img className="img-fluid rounded-circle" src={corporate} alt=""/>
+				  <img className="img-fluid rounded-circle" src={corporateMain} alt=""/>
 				</div>
 			  </div>
 			  <div className="col-lg-6 order-lg-1">

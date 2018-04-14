@@ -3,12 +3,9 @@ import './App.css';
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import axios from 'axios';
 
-import SignIn from "./components/SignIn";
-import SignUp from "./components/SignUp";
 import Welcome from "./components/Welcome";
 import ReadyOrder from "./components/ReadyOrder";
 import CustomOrder from "./components/CustomOrder";
-import Footer from "./components/Footer";
 import SignInModal from "./components/SignInModal";
 // import SignUpModal from "./components/SignUpModal";
 

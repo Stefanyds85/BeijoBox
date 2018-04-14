@@ -1,17 +1,104 @@
 import React from 'react';
-import Nav from "../Nav/index.js";
+import Nav from "../Nav";
+import {Link} from 'react-router-dom';
+import birthdayBox6 from "../Welcome/Images/birthdayBox6.jpg";
+import "./style.css";
+
+import ProdCard from "../ProductCard/ProdCard";
+
 
 export default class Example extends React.Component {
+
+  state = {
+    name: [],
+    category: "",
+    price: "",
+    products:[],
+    
+    
+  };
+
+  // componentDidMount() {
+  //   this.loadBox();
+  // }
+
+  // loadBooks = () => {
+  //   API.getBooks()
+  //     .then(res =>
+  //       this.setState({ books: res.data, title: "", author: "", synopsis: "" })
+  //     )
+  //     .catch(err => console.log(err));
+  // };
+
+  // deleteBook = id => {
+  //   API.deleteBook(id)
+  //     .then(res => this.loadBooks())
+  //     .catch(err => console.log(err));
+  // };
+
+  // handleInputChange = event => {
+  //   const { name, value } = event.target;
+  //   this.setState({
+  //     [name]: value
+  //   });
+  // };
+
+  // handleFormSubmit = event => {
+  //   event.preventDefault();
+  //   if (this.state.title && this.state.author) {
+  //     API.saveBook({
+  //       title: this.state.title,
+  //       author: this.state.author,
+  //       synopsis: this.state.synopsis
+  //     })
+  //       .then(res => this.loadBooks())
+  //       .catch(err => console.log(err));
+  //   }
+  // };
+
   render() {
+
+    const productSeed = [
+      {
+        name: "Beats headphones",
+        price: "$59.99",
+        description: "wireless headphones that can be used during activiteds like working out.",
+      },
+      {
+        name: "Fashion Clutch",
+        price: "$39.99",
+        description: "Ladies fashion black leather clutch.  ",
+      },
+      {
+        name: "Beats headphones",
+        price: "$59.99",
+        description: "wireless headphones that can be used during activiteds like working out.",
+      },
+      {
+        name: "Champagne Flutes",
+        price: "$65.00",
+        description: "2 Crystal champagne flutes.",
+      },
+      {
+        name: "Beats headphones",
+        price: "$59.99",
+        description: "wireless headphones that can be used during activiteds like working out.",
+      },
+      {
+        name: "Beats headphones",
+        price: "$59.99",
+        description: "wireless headphones that can be used during activiteds like working out.",
+      }
+    
+    ];
+  
     return (
-      
+      <body>
       <div>
         <Nav {...this.props}/>
+      </div>
 
-        <body>
 
-
- <Nav {...this.props}/>
 
 {/* <!-- Page Content --> */}
 <div className="container">
@@ -20,11 +107,11 @@ export default class Example extends React.Component {
 
     <div className="col-lg-3">
 
-      <h1 className="my-4">Shop Name</h1>
+      <h1 className="my-4">BeijoBox</h1>
       <div className="list-group">
-        <a href="#" className="list-group-item">Category 1</a>
-        <a href="#" className="list-group-item">Category 2</a>
-        <a href="#" className="list-group-item">Category 3</a>
+        <a href="#" className="list-group-item">Birthdays</a>
+        <a href="#" className="list-group-item">Anniversary</a>
+        <a href="#" className="list-group-item">Corporate Celebrations</a>
       </div>
 
     </div>
@@ -61,102 +148,29 @@ export default class Example extends React.Component {
 
       <div className="row">
 
-        <div className="col-lg-4 col-md-6 mb-4">
-          <div className="card h-100">
-            <a href="#"><img className="card-img-top" src="http://placehold.it/700x400" alt=""/></a>
-            <div className="card-body">
-              <h4 className="card-title">
-                <a href="#">Item One</a>
-              </h4>
-              <h5>$24.99</h5>
-              <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-            </div>
-            <div className="card-footer">
-              <small className="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-            </div>
-          </div>
-        </div>
+        <ProdCard title={productSeed[0].name} price={productSeed[0].price} > 
+          {productSeed[0].description}
+        </ProdCard>
 
-        <div className="col-lg-4 col-md-6 mb-4">
-          <div className="card h-100">
-            <a href="#"><img className="card-img-top" src="http://placehold.it/700x400" alt=""/></a>
-            <div className="card-body">
-              <h4 className="card-title">
-                <a href="#">Item Two</a>
-              </h4>
-              <h5>$24.99</h5>
-              <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
-            </div>
-            <div className="card-footer">
-              <small className="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-            </div>
-          </div>
-        </div>
+         <ProdCard title={productSeed[1].name} price={productSeed[1].price} > 
+          {productSeed[1].description}
+        </ProdCard>
 
-        <div className="col-lg-4 col-md-6 mb-4">
-          <div className="card h-100">
-            <a href="#"><img className="card-img-top" src="http://placehold.it/700x400" alt=""/></a>
-            <div className="card-body">
-              <h4 className="card-title">
-                <a href="#">Item Three</a>
-              </h4>
-              <h5>$24.99</h5>
-              <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-            </div>
-            <div className="card-footer">
-              <small className="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-            </div>
-          </div>
-        </div>
+         <ProdCard title={productSeed[2].name} price={productSeed[2].price} > 
+          {productSeed[2].description}
+        </ProdCard>
 
-        <div className="col-lg-4 col-md-6 mb-4">
-          <div className="card h-100">
-            <a href="#"><img className="card-img-top" src="http://placehold.it/700x400" alt=""/></a>
-            <div className="card-body">
-              <h4 className="card-title">
-                <a href="#">Item Four</a>
-              </h4>
-              <h5>$24.99</h5>
-              <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-            </div>
-            <div className="card-footer">
-              <small className="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-            </div>
-          </div>
-        </div>
+         <ProdCard title={productSeed[3].name} price={productSeed[3].price} > 
+          {productSeed[3].description}
+        </ProdCard>
 
-        <div className="col-lg-4 col-md-6 mb-4">
-          <div className="card h-100">
-            <a href="#"><img className="card-img-top" src="http://placehold.it/700x400" alt=""/></a>
-            <div className="card-body">
-              <h4 className="card-title">
-                <a href="#">Item Five</a>
-              </h4>
-              <h5>$24.99</h5>
-              <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
-            </div>
-            <div className="card-footer">
-              <small className="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-            </div>
-          </div>
-        </div>
+         <ProdCard title={productSeed[4].name} price={productSeed[4].price} > 
+          {productSeed[4].description}
+        </ProdCard>
 
-        <div className="col-lg-4 col-md-6 mb-4">
-          <div className="card h-100">
-            <a href="#"><img className="card-img-top" src="http://placehold.it/700x400" alt=""/></a>
-            <div className="card-body">
-              <h4 className="card-title">
-                <a href="#">Item Six</a>
-              </h4>
-              <h5>$24.99</h5>
-              <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-            </div>
-            <div className="card-footer">
-              <small className="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-            </div>
-          </div>
-
-        </div>
+         <ProdCard title={productSeed[5].name} price={productSeed[5].price} > 
+          {productSeed[5].description}
+        </ProdCard>
 
       </div>
       <row></row>
@@ -169,17 +183,14 @@ export default class Example extends React.Component {
 
 </div>
 
-<footer className="py-5 bg-dark">
+<footer className="py-5 bg-black">
   <div className="container">
-    <p className="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
+    <p className="m-0 text-center text-white">Copyright &copy; BeijoBox 2018</p>
   </div>
 </footer>
 
-
 </body>
 
- 
-        </div>
     );
   }
 }
