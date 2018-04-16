@@ -7,7 +7,7 @@ import Welcome from "./components/Welcome";
 import ReadyOrder from "./components/ReadyOrder";
 import CustomOrder from "./components/CustomOrder";
 import SignInModal from "./components/SignInModal";
-// import SignUpModal from "./components/SignUpModal";
+import SignUpModal from "./components/SignUpModal";
 
 
 class App extends Component {
@@ -125,6 +125,25 @@ class App extends Component {
             }
           }
           } />
+
+           <Route exact path="/signupmodal" render={() => {
+            if (loggedIn) {
+              return <Redirect to="/" />
+            } else {
+              return <SignUpModal
+                handleLogout={this.handleLogout}
+                auth={this.state.auth}
+                handleChange={this.handleChange}
+                handleSubmit={this.handleSubmit}
+                email={this.state.email}
+                password={this.state.password}
+              />
+            }
+          }
+          } />
+
+
+
         </div>
       </Router>
 

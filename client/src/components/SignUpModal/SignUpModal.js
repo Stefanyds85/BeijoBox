@@ -14,7 +14,7 @@ import {
   DropdownMenu,
   DropdownItem } from 'reactstrap';
 
-class ModalExample extends React.Component {
+class SignUpModal extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -43,15 +43,12 @@ class ModalExample extends React.Component {
   render() {
     return (
       <div>
-        <Form inline onSubmit={(e) => e.preventDefault()}>
-          <DropdownItem onClick={this.toggle}>Sign Up
-          </DropdownItem>
-        </Form>
+        <SignUpForm {...this.props} />
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className} backdrop={this.state.backdrop}>
           <ModalHeader toggle={this.toggle}>Sign Up</ModalHeader>
           <ModalBody>
 
-            <SignUpForm {...this.props}/>
+            <SignUpForm {...this.props} />
             
           </ModalBody>
           <ModalFooter>
@@ -63,4 +60,4 @@ class ModalExample extends React.Component {
   }
 }
 
-export default ModalExample;
+export default SignUpModal;

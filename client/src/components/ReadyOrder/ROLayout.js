@@ -1,10 +1,15 @@
 import React from 'react';
 import Nav from "../Nav";
 import {Link} from 'react-router-dom';
-import birthdayBox6 from "../Welcome/Images/birthdayBox6.jpg";
+import birthdayBox6 from "../Images/birthdayBox6.jpg";
+import anniversaryBox3 from "../Images/anniversaryBox3.jpg";
+import corporateBox2 from "../Images/corporateBox2.jpg";
+
 import "./style.css";
 
 import ProdCard from "../ProductCard/ProdCard";
+import ProductPg from "../Products/ProductPg";
+import COLayout from "../CustomOrder/COLayout";
 
 
 export default class Example extends React.Component {
@@ -14,7 +19,6 @@ export default class Example extends React.Component {
     category: "",
     price: "",
     products:[],
-    
     
   };
 
@@ -59,20 +63,14 @@ export default class Example extends React.Component {
   render() {
 
     const productSeed = [
-      {
-        name: "Beats headphones",
-        price: "$59.99",
-        description: "wireless headphones that can be used during activiteds like working out.",
-      },
+       
       {
         name: "Fashion Clutch",
         price: "$39.99",
         description: "Ladies fashion black leather clutch.  ",
       },
       {
-        name: "Beats headphones",
-        price: "$59.99",
-        description: "wireless headphones that can be used during activiteds like working out.",
+        name: "Beats headphones", price: "$59.99", description: "wireless headphones that can be used during activiteds like working out.",
       },
       {
         name: "Champagne Flutes",
@@ -112,6 +110,10 @@ export default class Example extends React.Component {
         <a href="#" className="list-group-item">Birthdays</a>
         <a href="#" className="list-group-item">Anniversary</a>
         <a href="#" className="list-group-item">Corporate Celebrations</a>
+        <a href="#" className="list-group-item">Birthdays</a>
+        <br/>
+        <Link className="navbar-brand" to="../CustomOrder">Custom Orders</Link>
+        <Link className="navbar-brand" to="../Products">Procuct List</Link>
       </div>
 
     </div>
@@ -127,13 +129,13 @@ export default class Example extends React.Component {
         </ol>
         <div className="carousel-inner" role="listbox">
           <div className="carousel-item active">
-            <img className="d-block img-fluid" src="http://placehold.it/900x350" alt="First slide"/>
+            <img className="d-block img-fluid img-responsive" src={corporateBox2} alt="First slide"/>
           </div>
           <div className="carousel-item">
-            <img className="d-block img-fluid" src="http://placehold.it/900x350" alt="Second slide"/>
+            <img className="d-block img-fluidimg-responsive" src= {anniversaryBox3} alt="Second slide"/>
           </div>
           <div className="carousel-item">
-            <img className="d-block img-fluid" src="http://placehold.it/900x350" alt="Third slide"/>
+            <img className="d-block img-fluidimg-responsive" src= {birthdayBox6} alt="Third slide"/>
           </div>
         </div>
         <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -166,10 +168,6 @@ export default class Example extends React.Component {
 
          <ProdCard title={productSeed[4].name} price={productSeed[4].price} > 
           {productSeed[4].description}
-        </ProdCard>
-
-         <ProdCard title={productSeed[5].name} price={productSeed[5].price} > 
-          {productSeed[5].description}
         </ProdCard>
 
       </div>

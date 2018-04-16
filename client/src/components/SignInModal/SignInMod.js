@@ -46,10 +46,6 @@ class SignInMod extends React.Component {
     return (
       <div>
         <SignInForm {...this.props} />
-        {/* <Form inline onSubmit={(e) => e.preventDefault()}>
-          <DropdownItem onClick={this.toggle}>Sign puppy In
-          </DropdownItem>
-          </Form> */}
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className} backdrop={this.state.backdrop}>
           <ModalHeader toggle={this.toggle}>Sign china In</ModalHeader>
           <ModalBody>

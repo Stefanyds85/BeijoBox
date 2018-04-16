@@ -1,5 +1,6 @@
 import React from "react";
-import birthdayBox6 from "../Welcome/Images/birthdayBox6.jpg";
+// import birthdayBox6 from "../Welcome/Images/birthdayBox6.jpg";
+import birthdayBox6 from "../Images/birthdayBox6.jpg";
 
 export default (props)=>{
 

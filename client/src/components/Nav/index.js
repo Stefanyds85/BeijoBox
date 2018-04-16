@@ -1,7 +1,7 @@
   import React from 'react';
   import {Link} from 'react-router-dom';
   import SignInModal from "../SignInModal";
-  // import SignUpModal from "../SignUpModal";
+  import SignUpModal from "../SignUpModal";
   import Welcome from "../Welcome";
   
   export default class Nav extends React.Component {
@@ -30,10 +30,10 @@
           <div className="collapse navbar-collapse" id="navbarResponsive">
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
-                <Link className="nav-link" to="/signinmodal">Sign banana In</Link>
+                <Link className="nav-link" to="/signinmodal">Sign In</Link>
               </li>
               <li className="nav-item">
-                {/* <Link className="nav-link" to="../signupmodal">Sign Up</Link> */}
+                <Link className="nav-link" to="/signupmodal">Sign Up</Link>
               </li>
             </ul>
           </div>

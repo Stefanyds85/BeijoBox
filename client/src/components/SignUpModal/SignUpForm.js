@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
-export default class Example extends React.Component {
+export default class SignUpForm extends React.Component {
   render() {
     return (
       <Form>
@@ -14,7 +14,7 @@ export default class Example extends React.Component {
           <Input value= {this.props.username} onchange = {this.props.handleChange} type="password" name="password"   />
         </FormGroup>
        
-        <Button type = "Submit" name = "/auth/signup" onClick = {this.props.handleSubmit}> Submit</Button>
+        <Button type = "Submit" name = "/auth/signupmodal" onClick = {this.props.handleSubmit}> Submit</Button>
       </Form>
 
       
