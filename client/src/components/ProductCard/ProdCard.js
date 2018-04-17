@@ -1,5 +1,4 @@
 import React from "react";
-// import birthdayBox6 from "../Welcome/Images/birthdayBox6.jpg";
 import birthdayBox6 from "../Images/birthdayBox6.jpg";
 
 export default (props)=>{
@@ -7,7 +6,7 @@ export default (props)=>{
     return (
         
         <div className="col-lg-4  col-md-6 mb-4">
-          <div className="card h-100">
+          <div className="card h-100" style={{background:"linear-gradient #ff6a00 0, #ee0979 100%"}}>
             <a href="#"><img className="card-img-top img-responsive" src= {birthdayBox6} alt=""/></a>
             <div className="card-body">
               <h4 className="card-title">

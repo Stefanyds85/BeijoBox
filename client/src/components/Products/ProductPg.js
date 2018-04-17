@@ -5,7 +5,7 @@ import { Card, CardImg, CardText, CardBody,
 import Nav from "../Nav/index.js";
 
 
-const Example = (props) => {
+const ProductPg = (props) => {
   return (
     <div>
       <Nav {...this.props}/>
@@ -23,4 +23,4 @@ const Example = (props) => {
   );
 };
 
-export default Example;
+export default ProductPg;

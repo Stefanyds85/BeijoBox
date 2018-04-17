@@ -3,6 +3,7 @@ import './App.css';
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import axios from 'axios';
 
+
 import Welcome from "./components/Welcome";
 import ReadyOrder from "./components/ReadyOrder";
 import CustomOrder from "./components/CustomOrder";
@@ -88,7 +89,9 @@ class App extends Component {
       <Router>
         <div>
           <Route exact path="/" render={() => {
-            return <Welcome handleLogout={this.handleLogout} auth={this.state.auth} />
+            return <Welcome  
+            // handleLogout={this.handleLogout} auth={this.state.auth} 
+            />
           }} />
 
           <Route exact path="/readyorder" render={() => {
@@ -123,8 +126,7 @@ class App extends Component {
                 password={this.state.password}
               />
             }
-          }
-          } />
+          }} />
 
            <Route exact path="/signupmodal" render={() => {
             if (loggedIn) {
@@ -141,6 +143,8 @@ class App extends Component {
             }
           }
           } />
+
+          
 
 
 

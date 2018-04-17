@@ -11,32 +11,30 @@ import ProdCard from "../ProductCard/ProdCard";
 import ProductPg from "../Products/ProductPg";
 import COLayout from "../CustomOrder/COLayout";
 
-
 export default class Example extends React.Component {
 
   state = {
-    name: [],
-    category: "",
+    name: "",
     price: "",
-    products:[],
+    description:""
     
   };
 
   // componentDidMount() {
-  //   this.loadBox();
+  //   this.loadProduct();
   // }
 
-  // loadBooks = () => {
-  //   API.getBooks()
+  // loadProduct = () => {
+  //   routes.getProduct()
   //     .then(res =>
-  //       this.setState({ books: res.data, title: "", author: "", synopsis: "" })
+  //       this.setState({ Product: res.data, name: "", price: "", description: "" })
   //     )
   //     .catch(err => console.log(err));
   // };
 
-  // deleteBook = id => {
-  //   API.deleteBook(id)
-  //     .then(res => this.loadBooks())
+  // deleteProduct = id => {
+  //   routes.deleteProduct(id)
+  //     .then(res => this.loadProduct())
   //     .catch(err => console.log(err));
   // };
 
@@ -49,13 +47,13 @@ export default class Example extends React.Component {
 
   // handleFormSubmit = event => {
   //   event.preventDefault();
-  //   if (this.state.title && this.state.author) {
-  //     API.saveBook({
-  //       title: this.state.title,
-  //       author: this.state.author,
-  //       synopsis: this.state.synopsis
+  //   if (this.state.name && this.state.price) {
+  //     routes.saveProduct({
+  //       name: this.state.name,
+  //       price: this.state.price,
+  //       description: this.state.description,
   //     })
-  //       .then(res => this.loadBooks())
+  //       .then(res => this.loadProduct())
   //       .catch(err => console.log(err));
   //   }
   // };
@@ -95,6 +93,8 @@ export default class Example extends React.Component {
       <div>
         <Nav {...this.props}/>
       </div>
+
+      <br/>
 
 
 

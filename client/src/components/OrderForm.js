@@ -8,14 +8,14 @@ export default class OrderForm extends React.Component {
             <div className="form-row">
                 <div className="col-md-4 mb-3">
                 <label for="validationTooltip01">First name</label>
-                <input type="text" className="form-control" id="validationTooltip01" placeholder="First name" value="Mark" required>
+                <input type="text" className="form-control" id="validationTooltip01" placeholder="First name" value="Mark" required/>
                 <div className="valid-tooltip">
                     Looks good!
                 </div>
                 </div>
                 <div className="col-md-4 mb-3">
                 <label for="validationTooltip02">Last name</label>
-                <input type="text" className="form-control" id="validationTooltip02" placeholder="Last name" value="Otto" required>
+                <input type="text" className="form-control" id="validationTooltip02" placeholder="Last name" value="Otto" required/>
                 <div className="valid-tooltip">
                     Looks good!
                 </div>
@@ -26,7 +26,7 @@ export default class OrderForm extends React.Component {
                     <div className="input-group-prepend">
                     <span className="input-group-text" id="validationTooltipUsernamePrepend">@</span>
                     </div>
-                    <input type="text" className="form-control" id="validationTooltipUsername" placeholder="Username" aria-describedby="validationTooltipUsernamePrepend" required>
+                    <input type="text" className="form-control" id="validationTooltipUsername" placeholder="Username" aria-describedby="validationTooltipUsernamePrepend" required/>
                     <div className="invalid-tooltip">
                     Please choose a unique and valid username.
                     </div>
@@ -36,21 +36,21 @@ export default class OrderForm extends React.Component {
             <div className="form-row">
                 <div className="col-md-6 mb-3">
                 <label for="validationTooltip03">City</label>
-                <input type="text" className="form-control" id="validationTooltip03" placeholder="City" required>
+                <input type="text" className="form-control" id="validationTooltip03" placeholder="City" required/>
                 <div className="invalid-tooltip">
                     Please provide a valid city.
                 </div>
                 </div>
                 <div className="col-md-3 mb-3">
                 <label for="validationTooltip04">State</label>
-                <input type="text" className="form-control" id="validationTooltip04" placeholder="State" required>
+                <input type="text" className="form-control" id="validationTooltip04" placeholder="State" required/>
                 <div className="invalid-tooltip">
                     Please provide a valid state.
                 </div>
                 </div>
                 <div className="col-md-3 mb-3">
                 <label for="validationTooltip05">Zip</label>
-                <input type="text" className="form-control" id="validationTooltip05" placeholder="Zip" required>
+                <input type="text" className="form-control" id="validationTooltip05" placeholder="Zip" required/>
                 <div className="invalid-tooltip">
                     Please provide a valid zip.
                 </div>

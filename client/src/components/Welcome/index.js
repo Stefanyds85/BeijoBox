@@ -82,8 +82,8 @@ const Welcome = (props) => {
 			  </div>
 			  <div className="col-lg-6 order-lg-1">
 				<div className="p-5">
-				  <h2 className="display-4">Let there be rock!</h2>
-				  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam sit iste esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione voluptatum molestiae adipisci, beatae obcaecati.</p>
+				  <h2 className="display-4">In recognition of your team!</h2>
+				  <p>Let us help make your corporate celebration all the more special. Our gift boxes will add just the right finishing touch in recognition of your team's hard work!</p>
 				</div>
 			  </div>
 			</div>

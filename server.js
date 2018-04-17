@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+// const mongo = require("mongodb");
 const app = express();
 const PORT = process.env.PORT || 3001;
 const models = require("./models");
@@ -36,3 +37,5 @@ mongoose.connect(
 app.listen(PORT, function() {
   console.log("🌎  ==> API Server now listening on "+PORT);
 });
+
+// const collection = db.collection("product")
