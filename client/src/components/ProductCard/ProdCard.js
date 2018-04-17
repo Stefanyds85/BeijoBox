@@ -12,7 +12,7 @@ export default (props)=>{
               <h4 className="card-title">
                 <a href="#">{props.title}</a>
               </h4>
-              <h5>{props.price}</h5>
+              <h5>${props.price}</h5>
               <p className="card-text">{props.children}</p>
             </div>
             <div className="card-footer">

@@ -122,7 +122,7 @@ class App extends Component {
                 auth={this.state.auth}
                 handleChange={this.handleChange}
                 handleSubmit={this.handleSubmit}
-                email={this.state.email}
+                username={this.state.username}
                 password={this.state.password}
               />
             }
@@ -137,7 +137,7 @@ class App extends Component {
                 auth={this.state.auth}
                 handleChange={this.handleChange}
                 handleSubmit={this.handleSubmit}
-                email={this.state.email}
+                username={this.state.username}
                 password={this.state.password}
               />
             }

@@ -4,9 +4,7 @@ const passportLocalMongoose = require('passport-local-mongoose');
 
 const User = new Schema({
 	name: String,
-	email: String,
-	password: String,
-	id: Number
+	email: String
 });
 //passport-local-mongoose creates a 'username' and some password fields for you
 //you can add some other fields here too if you like

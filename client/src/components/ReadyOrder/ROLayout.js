@@ -4,6 +4,8 @@ import {Link} from 'react-router-dom';
 import birthdayBox6 from "../Images/birthdayBox6.jpg";
 import anniversaryBox3 from "../Images/anniversaryBox3.jpg";
 import corporateBox2 from "../Images/corporateBox2.jpg";
+import axios from "axios";
+
 
 import "./style.css";
 
@@ -16,21 +18,22 @@ export default class Example extends React.Component {
   state = {
     name: "",
     price: "",
-    description:""
-    
+    description:"",
+    productList:[]
   };
 
-  // componentDidMount() {
-  //   this.loadProduct();
-  // }
+  componentDidMount() {
+    this.loadProducts();
+  }
 
-  // loadProduct = () => {
-  //   routes.getProduct()
-  //     .then(res =>
-  //       this.setState({ Product: res.data, name: "", price: "", description: "" })
-  //     )
-  //     .catch(err => console.log(err));
-  // };
+  loadProducts = () => {
+    axios.get("/myApi/product").then((res)=>{
+      console.log(res.data);
+      this.setState({
+        productList: res.data
+      });
+    });
+  };
 
   // deleteProduct = id => {
   //   routes.deleteProduct(id)
@@ -74,11 +77,6 @@ export default class Example extends React.Component {
         name: "Champagne Flutes",
         price: "$65.00",
         description: "2 Crystal champagne flutes.",
-      },
-      {
-        name: "Beats headphones",
-        price: "$59.99",
-        description: "wireless headphones that can be used during activiteds like working out.",
       },
       {
         name: "Beats headphones",
@@ -150,7 +148,15 @@ export default class Example extends React.Component {
 
       <div className="row">
 
-        <ProdCard title={productSeed[0].name} price={productSeed[0].price} > 
+        { this.state.productList.length > 0 &&
+          this.state.productList.map((product)=>{
+            return <ProdCard title={product.name} price={product.price} > 
+              {product.description}
+            </ProdCard>
+          })
+        }
+
+        {/* <ProdCard title={productSeed[0].name} price={productSeed[0].price} > 
           {productSeed[0].description}
         </ProdCard>
 
@@ -168,7 +174,7 @@ export default class Example extends React.Component {
 
          <ProdCard title={productSeed[4].name} price={productSeed[4].price} > 
           {productSeed[4].description}
-        </ProdCard>
+        </ProdCard> */}
 
       </div>
       <row></row>
